@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS carShowroom.order (
     clientId int not null,
     managerId int not null,
     dateOpened DATE not null,
-    dateClosed DATE not null,
+    dateClosed DATE null,
     FOREIGN KEY (carId)  REFERENCES carShowroom.car(idCar),
     FOREIGN KEY (clientId)  REFERENCES carShowroom.warehouse(idUser),
     FOREIGN KEY (managerId)  REFERENCES carShowroom.warehouse(idUser)

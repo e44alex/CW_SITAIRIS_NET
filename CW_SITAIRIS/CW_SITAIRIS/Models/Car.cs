@@ -15,5 +15,6 @@ namespace CW_SITAIRIS.Models
         public string engine { get; set; }
         public float price { get; set; }
         public string built { get; set; }
+        public int warehouseId { get; set; }
     }
 }
