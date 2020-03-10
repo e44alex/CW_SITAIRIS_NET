@@ -9,7 +9,7 @@ namespace CW_SITAIRIS.Models
     public class Warehouse
     {
         [Key]
-        public int idCar { get; set; }
+        public int idWarehouse { get; set; }
         public string address { get; set; }
         public int amountOfCar { get; set; }
     }

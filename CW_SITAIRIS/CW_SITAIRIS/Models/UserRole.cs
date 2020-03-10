@@ -9,6 +9,6 @@ namespace CW_SITAIRIS.Models
     {
         client,
         admin,
-        driver
+        manager
     }
 }
