@@ -10,7 +10,7 @@ drop schema if exists carShowroom;
 
 CREATE TABLE IF NOT EXISTS carShowroom.user (
     idUser INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    role ENUM('client', 'admin', 'driver') NOT NULL,
+    role ENUM('client', 'admin', 'manager') NOT NULL,
     name VARCHAR(30) NOT NULL UNIQUE,
     login VARCHAR(30) NOT NULL UNIQUE,
     password VARCHAR(30) NOT NULL,
@@ -36,4 +36,17 @@ CREATE TABLE IF NOT EXISTS carShowroom.warehouse (
     idWarehouse INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     address VARCHAR(100) NOT NULL,
     amountOfCar INT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS carShowroom.order (
+    orderId INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    carId int not null,
+    clientId int not null,
+    managerId int not null,
+    dateOpened DATE not null,
+    dateClosed DATE not null,
+    FOREIGN KEY (carId)  REFERENCES carShowroom.car(idCar),
+    FOREIGN KEY (clientId)  REFERENCES carShowroom.warehouse(idUser),
+    FOREIGN KEY (managerId)  REFERENCES carShowroom.warehouse(idUser)
+
 );
