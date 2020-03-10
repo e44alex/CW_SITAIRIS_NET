@@ -2,21 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CW_SITAIRIS.Models.AppDBContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace CW_SITAIRIS
 {
     public class Startup
     {
+
+        private IConfigurationRoot _confString;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+        }
+
+        public Startup(IHostEnvironment host)
+        {
+            _confString = new ConfigurationBuilder().SetBasePath(host.ContentRootPath)
+                .AddJsonFile("dbsettings.json").Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -32,11 +44,17 @@ namespace CW_SITAIRIS
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+
+            services.AddDbContext<AppDBContext>(
+                options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -52,11 +70,11 @@ namespace CW_SITAIRIS
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
