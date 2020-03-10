@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS carShowroom.car (
     engine VARCHAR(40) NOT NULL,
     price FLOAT NOT NULL,
     built VARCHAR(100) NOT NULL
+    warehouseId int not NULL,
+    FOREIGN KEY (warehouseId)  REFERENCES carShowroom.warehouse(idWarehouse)
 );
 
 CREATE TABLE IF NOT EXISTS carShowroom.warehouse (
