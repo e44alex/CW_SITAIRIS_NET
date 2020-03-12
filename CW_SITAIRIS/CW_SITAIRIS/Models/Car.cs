@@ -16,7 +16,8 @@ namespace CW_SITAIRIS.Models
         public string model { get; set; }
         public string engine { get; set; }
         public float price { get; set; }
-        public string built { get; set; }
+        public string built { get; set; } // complectation of car
+        //public int year { get; set; }
         public int warehouseId { get; set; }
     }
 }
