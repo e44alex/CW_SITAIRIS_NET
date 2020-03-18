@@ -172,3 +172,5 @@ D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS_NET
 D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS_NET\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Cars\Details.cshtml.g.cs
 D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS_NET\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Cars\Edit.cshtml.g.cs
 D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS_NET\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Cars\Index.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS_NET\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS_NET\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
