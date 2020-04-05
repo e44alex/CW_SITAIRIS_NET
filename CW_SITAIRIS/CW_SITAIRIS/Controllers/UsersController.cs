@@ -10,30 +10,22 @@ using CW_SITAIRIS.Models.AppDBContext;
 
 namespace CW_SITAIRIS.Controllers
 {
-    public class CarsController : Controller
+    public class UsersController : Controller
     {
         private readonly AppDBContext _context;
 
-        public CarsController(AppDBContext context)
+        public UsersController(AppDBContext context)
         {
             _context = context;
         }
 
-        // GET: Cars
-        public async Task<IActionResult> Index(string? mark)
+        // GET: Users
+        public async Task<IActionResult> Index()
         {
-            if (mark == null)
-            {
-                return View(await _context.Cars.ToListAsync());
-            }
-            else
-            {
-                return View(await _context.Cars.Where(x => x.mark == mark).ToListAsync());
-            }
+            return View(await _context.users.ToListAsync());
         }
 
-
-        // GET: Cars/Details/5
+        // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -41,39 +33,39 @@ namespace CW_SITAIRIS.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Cars
-                .FirstOrDefaultAsync(m => m.idCar == id);
-            if (car == null)
+            var user = await _context.users
+                .FirstOrDefaultAsync(m => m.idUser == id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            return View(user);
         }
 
-        // GET: Cars/Create
+        // GET: Users/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Cars/Create
+        // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idCar,country,color,mark,model,engine,price,built,warehouseId")] Car car)
+        public async Task<IActionResult> Create([Bind("idUser,role,name,login,password,birthdate,proneNumber,email")] User user)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(car);
+                _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(car);
+            return View(user);
         }
 
-        // GET: Cars/Edit/5
+        // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,22 +73,22 @@ namespace CW_SITAIRIS.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Cars.FindAsync(id);
-            if (car == null)
+            var user = await _context.users.FindAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
-            return View(car);
+            return View(user);
         }
 
-        // POST: Cars/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idCar,country,color,mark,model,engine,price,built,warehouseId")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("idUser,role,name,login,password,birthdate,proneNumber,email")] User user)
         {
-            if (id != car.idCar)
+            if (id != user.idUser)
             {
                 return NotFound();
             }
@@ -105,12 +97,12 @@ namespace CW_SITAIRIS.Controllers
             {
                 try
                 {
-                    _context.Update(car);
+                    _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CarExists(car.idCar))
+                    if (!UserExists(user.idUser))
                     {
                         return NotFound();
                     }
@@ -121,10 +113,10 @@ namespace CW_SITAIRIS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(car);
+            return View(user);
         }
 
-        // GET: Cars/Delete/5
+        // GET: Users/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,30 +124,30 @@ namespace CW_SITAIRIS.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Cars
-                .FirstOrDefaultAsync(m => m.idCar == id);
-            if (car == null)
+            var user = await _context.users
+                .FirstOrDefaultAsync(m => m.idUser == id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            return View(user);
         }
 
-        // POST: Cars/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var car = await _context.Cars.FindAsync(id);
-            _context.Cars.Remove(car);
+            var user = await _context.users.FindAsync(id);
+            _context.users.Remove(user);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CarExists(int id)
+        private bool UserExists(int id)
         {
-            return _context.Cars.Any(e => e.idCar == id);
+            return _context.users.Any(e => e.idUser == id);
         }
     }
 }

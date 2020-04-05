@@ -1,0 +1,60 @@
+﻿@model CW_SITAIRIS.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.role)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.role)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.login)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.login)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.birthdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.birthdate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.proneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.proneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idUser">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

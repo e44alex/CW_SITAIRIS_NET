@@ -1,4 +1,20 @@
-﻿<!DOCTYPE html>
+﻿@using CW_SITAIRIS.Controllers.LoginController
+@{
+    string label;
+    int userId = AccountController.UserId;
+
+    if (AccountController.authentificated())
+    {
+        label = "User page";
+    }
+    else
+    {
+        label = "Log In";
+    }
+}
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -34,7 +50,15 @@
                     <li><a asp-area="" asp-controller="Cars" asp-action="Index">Car Catalog</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                    @if (label == "Log In")
+                    {
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">@label</a></li>
+
+                    }
+                    else
+                    {
+                        <li><a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@userId">@label</a></li>
+                    }
                 </ul>
             </div>
         </div>

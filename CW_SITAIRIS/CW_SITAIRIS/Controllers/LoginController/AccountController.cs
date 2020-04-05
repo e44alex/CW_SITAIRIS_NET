@@ -15,6 +15,10 @@ namespace CW_SITAIRIS.Controllers.LoginController
 {
     public class AccountController : Controller
     {
+        public static int UserId { get; private set; }
+
+
+
         private AppDBContext db;
         public AccountController(AppDBContext context)
         {
@@ -34,6 +38,8 @@ namespace CW_SITAIRIS.Controllers.LoginController
                 User user = await db.users.FirstOrDefaultAsync(u => u.email == model.Email && u.password == model.Password);
                 if (user != null)
                 {
+                    UserId = user.idUser;
+
                     await Authenticate(model.Email); // аутентификация
 
                     return RedirectToAction("Index", "Home");
@@ -90,5 +96,17 @@ namespace CW_SITAIRIS.Controllers.LoginController
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Account");
         }
+
+        public static bool authentificated()
+        {
+            if (UserId != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
     }
 }
