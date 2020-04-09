@@ -17,7 +17,7 @@ namespace CW_SITAIRIS.Controllers.LoginController
     {
         public static int UserId { get; private set; }
 
-
+        public static int status { get; private set; } = -1;
 
         private AppDBContext db;
         public AccountController(AppDBContext context)
@@ -39,6 +39,7 @@ namespace CW_SITAIRIS.Controllers.LoginController
                 if (user != null)
                 {
                     UserId = user.idUser;
+                    status = (int) user.role;
 
                     await Authenticate(model.Email); // аутентификация
 
@@ -51,6 +52,7 @@ namespace CW_SITAIRIS.Controllers.LoginController
         [HttpGet]
         public IActionResult Register()
         {
+
             return View();
         }
         [HttpPost]
@@ -106,7 +108,5 @@ namespace CW_SITAIRIS.Controllers.LoginController
 
             return false;
         }
-
-
     }
 }

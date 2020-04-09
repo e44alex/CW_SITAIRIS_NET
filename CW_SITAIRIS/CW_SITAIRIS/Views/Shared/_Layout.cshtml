@@ -53,11 +53,22 @@
                     @if (label == "Log In")
                     {
                         <li><a asp-area="" asp-controller="Account" asp-action="Login">@label</a></li>
-
                     }
                     else
                     {
-                        <li><a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@userId">@label</a></li>
+                        if (AccountController.status == 0)
+                        {
+                            <li><a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@userId">@label</a></li>
+                        }
+                        if (AccountController.status == 2)
+                        {
+                            <li><a asp-area="" asp-controller="Users" asp-action="Index">All Users</a></li>
+                        }
+                        if (AccountController.status == 1)
+                        {
+                            @*<li><a asp-area="" asp-controller="Orders" asp-action="Index">Orders</a></li>*@
+                            @*<li><a asp-area="" asp-controller="TestDrives" asp-action="Index">Test Drives</a></li>*@
+                        }
                     }
                 </ul>
             </div>

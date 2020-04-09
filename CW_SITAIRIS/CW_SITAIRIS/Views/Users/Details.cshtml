@@ -1,4 +1,5 @@
-﻿@model CW_SITAIRIS.Models.User
+﻿@using CW_SITAIRIS.Controllers.LoginController
+@model CW_SITAIRIS.Models.User
 
 @{
     ViewData["Title"] = "Details";
@@ -55,6 +56,10 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.idUser">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @if (AccountController.status == 2)
+    {
+        <a asp-action="Edit" asp-route-id="@Model.idUser">Edit</a>
+        <a asp-action="Index">Back to List</a>
+    }
+
 </div>

@@ -62,8 +62,9 @@ namespace CW_SITAIRIS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idCar,country,color,mark,model,engine,price,built,warehouseId")] Car car)
+        public async Task<IActionResult> Create([Bind("idCar,country,color,mark,model,engine,price,built,warehouseId,picture")] Car car)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(car);
@@ -94,7 +95,7 @@ namespace CW_SITAIRIS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idCar,country,color,mark,model,engine,price,built,warehouseId")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("idCar,country,color,mark,model,engine,price,built,warehouseId,picture")] Car car)
         {
             if (id != car.idCar)
             {

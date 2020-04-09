@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj": {}
+    "D:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj": {}
   },
   "projects": {
-    "d:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj": {
+    "D:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj",
+        "projectUniqueName": "D:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj",
         "projectName": "CW_SITAIRIS",
-        "projectPath": "d:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj",
+        "projectPath": "D:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS.csproj",
         "packagesPath": "C:\\Users\\e44al\\.nuget\\packages\\",
-        "outputPath": "d:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\obj\\",
+        "outputPath": "D:\\Users\\77230061@sudy.bsuir.by\\OneDrive - bsuir.by\\Универ\\CW_SITAIRIS\\CW_SITAIRIS\\CW_SITAIRIS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\e44al\\AppData\\Roaming\\NuGet\\NuGet.Config",
