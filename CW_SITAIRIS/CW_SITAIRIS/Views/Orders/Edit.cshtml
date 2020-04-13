@@ -1,0 +1,54 @@
+﻿@model CW_SITAIRIS.Models.Order
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="orderId" />
+            <div class="form-group">
+                <label asp-for="carId" class="control-label"></label>
+                <input asp-for="carId" class="form-control" />
+                <span asp-validation-for="carId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="clientId" class="control-label"></label>
+                <input asp-for="clientId" class="form-control" />
+                <span asp-validation-for="clientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="managerId" class="control-label"></label>
+                <input asp-for="managerId" class="form-control" />
+                <span asp-validation-for="managerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateOpened" class="control-label"></label>
+                <input asp-for="dateOpened" class="form-control" />
+                <span asp-validation-for="dateOpened" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateClosed" class="control-label"></label>
+                <input asp-for="dateClosed" class="form-control" />
+                <span asp-validation-for="dateClosed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

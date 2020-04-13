@@ -355,3 +355,13 @@ d:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_
 d:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Users\Details.cshtml.g.cs
 d:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
 d:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Users\Index.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Create.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Delete.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Details.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Edit.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Index.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\TestDrives\Create.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\TestDrives\Delete.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\TestDrives\Details.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\TestDrives\Edit.cshtml.g.cs
+D:\Users\77230061@sudy.bsuir.by\OneDrive - bsuir.by\Универ\CW_SITAIRIS\CW_SITAIRIS\CW_SITAIRIS\obj\Debug\netcoreapp3.1\Razor\Views\TestDrives\Index.cshtml.g.cs

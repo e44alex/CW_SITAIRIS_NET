@@ -1,0 +1,52 @@
+﻿@using CW_SITAIRIS.Controllers.LoginController
+@model CW_SITAIRIS.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.carId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.carId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.clientId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.clientId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.managerId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.managerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOpened)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateOpened)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateClosed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateClosed)
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (AccountController.status > 0)
+    {
+        <a asp-action="Edit" asp-route-id="@Model.orderId">Edit</a>
+    }
+    <a asp-action="Index">Back to List</a>
+</div>

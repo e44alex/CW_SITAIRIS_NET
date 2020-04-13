@@ -7,18 +7,23 @@
     <div>
         <div>
             <label class="control-label" asp-for="Email">Введите Email</label><br />
-            <input  class="form-control"  type="text" asp-for="Email" />
+            <input  class="form-control"  type="text" asp-for="Email" required="true" />
             <span asp-validation-for="Email" />
         </div>
         <div>
             <label class="control-label" asp-for="Password">Введите пароль</label><br />
-            <input  class="form-control"  asp-for="Password" />
+            <input  class="form-control"  asp-for="Password" required="true"/>
             <span asp-validation-for="Password" />
         </div>
         <div>
             <label class="control-label" asp-for="ConfirmPassword">Повторите пароль</label><br />
             <input  class="form-control"  asp-for="ConfirmPassword" />
             <span asp-validation-for="ConfirmPassword" />
+        </div>
+        <div>
+            <label class="control-label" asp-for="UserFIO">ФИО</label>
+            <input type="text" class="form-control" asp-for="UserFIO" />
+            <span asp-validation-for="UserFIO"/>
         </div>
         <div>
             <br />

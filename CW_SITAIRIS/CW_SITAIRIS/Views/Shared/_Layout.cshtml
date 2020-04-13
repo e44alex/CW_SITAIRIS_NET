@@ -1,17 +1,5 @@
 ﻿@using CW_SITAIRIS.Controllers.LoginController
-@{
-    string label;
-    int userId = AccountController.UserId;
 
-    if (AccountController.authentificated())
-    {
-        label = "User page";
-    }
-    else
-    {
-        label = "Log In";
-    }
-}
 
 
 <!DOCTYPE html>
@@ -50,25 +38,29 @@
                     <li><a asp-area="" asp-controller="Cars" asp-action="Index">Car Catalog</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    @if (label == "Log In")
+                    @if (AccountController.status == -1)
                     {
-                        <li><a asp-area="" asp-controller="Account" asp-action="Login">@label</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log In</a></li>
                     }
                     else
                     {
-                        if (AccountController.status == 0)
+                        if (AccountController.status == 0) // client
                         {
-                            <li><a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@userId">@label</a></li>
+                            <li><a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@AccountController.UserId">User Page</a></li>
                         }
-                        if (AccountController.status == 2)
+                        if (AccountController.status == 2) // manager
                         {
+                            <li><a asp-area="" asp-controller="Orders" asp-action="Index">Orders</a></li>
+                            <li><a asp-area="" asp-controller="TestDrives" asp-action="Index" asp-route-date="@DateTime.Today">Test Drives</a></li>
+                        }
+                        if (AccountController.status == 1) // admin
+                        {
+
                             <li><a asp-area="" asp-controller="Users" asp-action="Index">All Users</a></li>
                         }
-                        if (AccountController.status == 1)
-                        {
-                            @*<li><a asp-area="" asp-controller="Orders" asp-action="Index">Orders</a></li>*@
-                            @*<li><a asp-area="" asp-controller="TestDrives" asp-action="Index">Test Drives</a></li>*@
-                        }
+                        <li>
+                            <a asp-controller="Account" asp-action="Logout">Log Out</a>
+                        </li>
                     }
                 </ul>
             </div>

@@ -19,5 +19,7 @@ namespace CW_SITAIRIS.Models.RegisterModel
         [Compare("Password", ErrorMessage = "Пароль введен неверно")]
         public string ConfirmPassword { get; set; }
 
+        [Required(ErrorMessage = "Не указаны ФИО")]
+        public string UserFIO { get; set; }
     }
 }

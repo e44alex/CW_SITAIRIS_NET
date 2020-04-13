@@ -19,6 +19,6 @@ namespace CW_SITAIRIS.Models.AppDBContext
         public DbSet<Car> Cars { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
-        public DbSet<Images> Images { get; set; }
+        public DbSet<TestDrives> TestDrives { get; set; }
     }
 }

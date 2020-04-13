@@ -81,8 +81,13 @@
                 <td>
                     @if (AccountController.status >= 1)
                     {
-                        <a asp-action="Edit" asp-route-id="@item.idCar">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.idCar">Delete</a>
+                        <a class="form-control" asp-action="Edit" asp-route-id="@item.idCar">Edit</a>
+                        <a class="form-control" asp-action="Delete" asp-route-id="@item.idCar">Delete</a>
+                    }
+                    @if (AccountController.status == 0)
+                    {
+                        <a class="form-control" asp-controller="TestDrives" asp-action="Create" asp-route-userId="@AccountController.UserId" asp-route-carId="@item.idCar">Test Drive</a>
+                        <a class="form-control" asp-controller="Orders" asp-action="Create" asp-route-carId="@item.idCar" asp-route-userId="@AccountController.UserId" >Order</a>
                     }
                     <a asp-action="Details" asp-route-id="@item.idCar">Details</a>
                 </td>

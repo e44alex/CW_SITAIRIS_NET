@@ -1,0 +1,75 @@
+﻿@using CW_SITAIRIS.Controllers.LoginController
+@model IEnumerable<CW_SITAIRIS.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="form-group">
+    <form asp-action="Index" method="get">
+        <div>
+            <label class="control-label">Date:</label>
+            <input class="form-control" type="date" name="date" />
+        </div>
+        <div>
+            <input type="submit" value="Filter" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+
+@if (AccountController.status > 0)
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<div class="card-body">
+
+</div>
+<table class="table">
+    <thead >
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.carId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateOpened)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateClosed)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.carId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOpened)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateClosed)
+            </td>
+            <td>
+                @if (AccountController.status > 0)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.orderId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.orderId">Delete</a>
+                }
+                <a asp-action="Details" asp-route-id="@item.orderId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

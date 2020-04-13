@@ -13,10 +13,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CW_SITAIRIS.Controllers.LoginController
 {
+
     public class AccountController : Controller
     {
         public static int UserId { get; private set; }
 
+        /*
+         *-1 -- Not authentficated
+         * 0 -- client
+         * 1 -- admin
+         * 2 -- manager
+         */
         public static int status { get; private set; } = -1;
 
         private AppDBContext db;
@@ -52,7 +59,6 @@ namespace CW_SITAIRIS.Controllers.LoginController
         [HttpGet]
         public IActionResult Register()
         {
-
             return View();
         }
         [HttpPost]
@@ -65,7 +71,7 @@ namespace CW_SITAIRIS.Controllers.LoginController
                 if (user == null)
                 {
                     // добавляем пользователя в бд
-                    db.users.Add(new User { email = model.Email, password = model.Password });
+                    db.users.Add(new User { email = model.Email, password = model.Password, name = model.UserFIO});
                     await db.SaveChangesAsync();
 
                     await Authenticate(model.Email); // аутентификация
@@ -96,6 +102,8 @@ namespace CW_SITAIRIS.Controllers.LoginController
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            status = -1;
             return RedirectToAction("Login", "Account");
         }
 

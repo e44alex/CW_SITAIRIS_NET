@@ -5,10 +5,15 @@
     ViewData["Title"] = "Details";
 }
 
+<a asp-controller="Account" asp-action="Logout" style="margin-left: 1000px">Log out</a>
+
 <h2>Details</h2>
 
+
+<a asp-controller="Orders" asp-action="Index" asp-route-userId="@AccountController.UserId" class="btn btn-outline-primary" >My Orders</a>
+
 <div>
-    <h4>User</h4>
+    <h4>Personal page</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
