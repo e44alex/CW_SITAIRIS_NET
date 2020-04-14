@@ -20,5 +20,11 @@ namespace CW_SITAIRIS.Models
         //public int year { get; set; }
         public int warehouseId { get; set; }
         public string picture { get; set; }
+
+
+        public override string ToString()
+        {
+            return mark + " " + model + " " + engine + " " + built;
+        }
     }
 }

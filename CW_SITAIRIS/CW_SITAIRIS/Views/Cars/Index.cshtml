@@ -2,10 +2,10 @@
 @model IEnumerable<CW_SITAIRIS.Models.Car>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Car Catalog";
 }
 
-<h2>Index</h2>
+<h2>Catalog</h2>
 
 @if (AccountController.status >= 1)
 {
@@ -14,7 +14,34 @@
     </p>
 }
 
-<table class="table">
+
+<div class="form-inline" >
+    <form asp-controller="Cars" asp-action="Index" method="get">
+        <span>
+            <label class="control-label">Mark</label>
+            <input class="form-control" type="text" name="mark" placeholder="Mark..." />
+        </span>
+        <span>
+            <label class="control-label">Model</label>
+            <input class="form-control" type="text" name="model" placeholder="Model..." />
+        </span>
+
+        <span>
+            <label class="control-label">Built</label>
+            <input class="form-control" type="text" name="built" placeholder="Built..." />
+        </span>
+        <div>
+            <br />
+            <input class="btn btn-primary" type="submit" name="name" value="Filter" />
+        </div>
+    </form>
+
+</div>
+<div class="form-group" style="width: 100%">
+    
+</div>
+
+<table class="table" >
     <thead>
         <tr>
             <th>@*Image label*@</th>

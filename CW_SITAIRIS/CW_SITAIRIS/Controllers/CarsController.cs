@@ -20,16 +20,26 @@ namespace CW_SITAIRIS.Controllers
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index(string? mark)
+        public async Task<IActionResult> Index(string? mark, string? model, string? built)
         {
-            if (mark == null)
+            List<Car> cars = await _context.Cars.ToListAsync();
+            if (mark != null)
             {
-                return View(await _context.Cars.ToListAsync());
+                cars = cars.Where(x => x.mark.ToLower() == mark.ToLower()).ToList();
             }
-            else
+
+            if (model != null)
             {
-                return View(await _context.Cars.Where(x => x.mark == mark).ToListAsync());
+                cars = cars.Where(x => x.model.ToLower() == model.ToLower()).ToList();
             }
+
+            if (built != null)
+            {
+                cars = cars.Where(x => x.built.ToLower() == built.ToLower()).ToList();
+            }
+
+            return View(cars);
+
         }
 
 

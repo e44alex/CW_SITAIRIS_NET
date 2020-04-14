@@ -96,12 +96,39 @@
 </div>
 
 
-<div class="badge">
-    <div >
-        <h4>Test-Drive</h4>
-        <p>
-            Free test drive is a brilliant ooprtunity to get aquaintaned with you future car.
-        </p>
-        <a asp-controller="Cars" asp-action="Index" class="btn btn-primary">Test Drive</a>
+<div class="card-deck">
+
+    <div class="card" >
+        <div class="card-img-top">
+            <img src="~/images/Jetta_975kh623_1025kh655_min.jpg" alt="Alternate Text" height="auto" width="540px"/>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Test-Drive</h4>
+            <p class="card-text">
+                Free test drive is a brilliant opportunity to get acquainted with you future car.
+            </p>
+            <a asp-controller="Cars" asp-action="Index" class="btn btn-primary">Test Drive</a>
+
+        </div>
     </div>
+
+    <div class="card" >
+
+        <div class="card-body">
+            <h4 class="card-title">Car Catalog</h4>
+            <p class="card-text">
+                Variety of cars. Pick the one that suits you.
+            </p>
+            <a asp-controller="Cars" asp-action="Index" class="btn btn-primary">View Catalog</a>
+
+        </div>
+        <div class="card-img-bottom">
+            <img src="~/images/mercedesc.jpg" alt="Alternate Text" height="auto" width="540px" />
+        </div>
+    </div>
+
 </div>
+
+
+
+

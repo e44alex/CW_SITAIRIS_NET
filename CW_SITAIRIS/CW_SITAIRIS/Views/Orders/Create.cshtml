@@ -13,22 +13,22 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="carId" class="control-label"></label>
-                <input asp-for="carId" class="form-control" />
+                
+                <input type="hidden" asp-for="carId" class="form-control" hidden />
                 <span asp-validation-for="carId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="clientId" class="control-label"></label>
-                <input asp-for="clientId" class="form-control" />
+               
+                <input type="hidden" asp-for="clientId" class="form-control" hidden />
                 <span asp-validation-for="clientId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="dateOpened" class="control-label"></label>
-                <input asp-for="dateOpened" class="form-control" />
+                <label asp-for="dateOpened" class="control-label" hidden></label>
+                <input  asp-for="dateOpened" class="form-control" disabled="disabled"/>
                 <span asp-validation-for="dateOpened" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="dateClosed" class="control-label"></label>
+                <label class="control-label">Receive date:</label>
                 <input asp-for="dateClosed" class="form-control" />
                 <span asp-validation-for="dateClosed" class="text-danger"></span>
             </div>

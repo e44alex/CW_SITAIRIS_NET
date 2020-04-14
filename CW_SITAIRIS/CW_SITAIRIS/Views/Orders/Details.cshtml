@@ -1,33 +1,33 @@
-﻿@using CW_SITAIRIS.Controllers.LoginController
-@model CW_SITAIRIS.Models.Order
+﻿@using CW_SITAIRIS.Controllers
+@using CW_SITAIRIS.Controllers.LoginController
+@using CW_SITAIRIS.Models.AppDBContext
+@using SQLitePCL
+@model CW_SITAIRIS.Models.OrderInfo
 
 @{
     ViewData["Title"] = "Details";
+
+
+
 }
 
-<h2>Details</h2>
+<h2>Order Details</h2>
 
 <div>
     <h4>Order</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.carId)
+            @Html.DisplayNameFor(model => model.carName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.carId)
+            @Html.DisplayFor(model => model.carName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.clientId)
+            @Html.DisplayNameFor(model => model.clientName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.clientId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.managerId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.managerId)
+            @Html.DisplayFor(model => model.clientName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.dateOpened)

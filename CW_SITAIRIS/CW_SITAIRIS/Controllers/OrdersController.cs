@@ -14,14 +14,25 @@ namespace CW_SITAIRIS.Controllers
 {
     public class OrdersController : Controller
     {
-        private readonly AppDBContext _context;
+        private static AppDBContext _context;
 
         public OrdersController(AppDBContext context)
         {
             _context = context;
         }
 
-        
+
+        public static Task<Car> getCar(Order order)
+        {
+            return _context.Cars.Where(x => x.idCar == order.carId).FirstOrDefaultAsync();
+        }
+
+        public static Task<User> getUser(Order order)
+        {
+            return _context.users.Where(x => x.idUser == order.clientId).FirstOrDefaultAsync();
+        }
+
+
         // GET: Orders/5
         public async Task<IActionResult> Index(int? userId, DateTime? date)
         {
@@ -69,8 +80,15 @@ namespace CW_SITAIRIS.Controllers
             {
                 return NotFound();
             }
+            else
+            {
+                OrderInfo info = new OrderInfo(order);
 
-            return View(order);
+                info.carName = getCar(order).Result.ToString();
+                info.clientName = getUser(order).Result.name;
+
+                return View(info);
+            }
         }
 
         // GET: Orders/Create
