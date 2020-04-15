@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<CW_SITAIRIS.Models.TestDriveInfo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Список тест-драйвов";
 }
 
-<h2>Index</h2>
+    <h2>Список тест-драйвов</h2>
 
 <p>
     <form asp-action="Index" method="get">
         <div>
-            <label class="control-label">Date:</label>
+            <label class="control-label">Дата:</label>
             <input class="form-control" type="date" name="date"/>
         </div>
         <div>
-            <input type="submit" value="Filter"  class="btn btn-default"/>
+            <input type="submit" value="Поиск"  class="btn btn-default"/>
         </div>
     </form>
 
@@ -22,13 +22,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.date)
+               Дата
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.clientFio)
+                ФИО клиента
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.carName)
+                Автомобиль
             </th>
             <th></th>
         </tr>

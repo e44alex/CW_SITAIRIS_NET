@@ -1,12 +1,12 @@
 ﻿@model CW_SITAIRIS.Models.TestDrives
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Изменение";
 }
 
-<h2>Edit</h2>
+<h2>Изменение</h2>
 
-<h4>TestDrives</h4>
+<h4>Тест-драйва</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,29 +14,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="idDrive" />
             <div class="form-group">
-                <label asp-for="userId" class="control-label"></label>
+                <label class="control-label">ИД пользователя</label>
                 <input asp-for="userId" class="form-control" />
                 <span asp-validation-for="userId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="carId" class="control-label"></label>
+                <label class="control-label">ИД автомобиля</label>
                 <input asp-for="carId" class="form-control" />
                 <span asp-validation-for="carId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="date" class="control-label"></label>
+                <label class="control-label">Дата</label>
                 <input asp-for="date" class="form-control" />
                 <span asp-validation-for="date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Сохранить" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Назад к списку</a>
 </div>
 
 @section Scripts {

@@ -4,39 +4,33 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Удаление</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Вы уверены, что хотите удалить заказ?</h3>
 <div>
     <h4>Order</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.carId)
+            Номер авто
         </dt>
         <dd>
             @Html.DisplayFor(model => model.carId)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.clientId)
+           Номер клиента
         </dt>
         <dd>
             @Html.DisplayFor(model => model.clientId)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.managerId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.managerId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.dateOpened)
+            Заказ создан
         </dt>
         <dd>
             @Html.DisplayFor(model => model.dateOpened)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.dateClosed)
+            Дата выдачи авто
         </dt>
         <dd>
             @Html.DisplayFor(model => model.dateClosed)
@@ -45,7 +39,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="orderId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Удалить" class="btn btn-default" /> |
+        <a asp-action="Index">Назад к списку</a>
     </form>
 </div>

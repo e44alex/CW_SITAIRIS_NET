@@ -2,62 +2,62 @@
 @model CW_SITAIRIS.Models.Car
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Подробности";
 }
 
-<h2>Details</h2>
+<h2>Подробности</h2>
 
 <div>
     <h4>Car</h4>
     <hr />
     <dl class="dl-horizontal">
         <dd>
-            <img src="~/images/@Model.picture" alt="@Model.mark" width="1000" height="auto"  />
+            <img src="~/images/@Model.picture" alt="@Model.mark" width="1000" height="auto" />
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.country)
+            Страна
         </dt>
         <dd>
             @Html.DisplayFor(model => model.country)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.color)
+            Цвет
         </dt>
         <dd>
             @Html.DisplayFor(model => model.color)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.mark)
+            Марка
         </dt>
         <dd>
             @Html.DisplayFor(model => model.mark)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.model)
+            Модель
         </dt>
         <dd>
             @Html.DisplayFor(model => model.model)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.engine)
+            Двигатель
         </dt>
         <dd>
             @Html.DisplayFor(model => model.engine)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.price)
+            Цена
         </dt>
         <dd>
             @Html.DisplayFor(model => model.price)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.built)
+            Комплектация
         </dt>
         <dd>
             @Html.DisplayFor(model => model.built)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.warehouseId)
+            Номер склада
         </dt>
         <dd>
             @Html.DisplayFor(model => model.warehouseId)
@@ -67,7 +67,7 @@
 <div>
     @if (AccountController.status == 1)
     {
-        <a asp-action="Edit" asp-route-id="@Model.idCar">Edit</a>
+        <a asp-action="Edit" asp-route-id="@Model.idCar">Изменить</a>
     }
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Назад к списку</a>
 </div>

@@ -2,15 +2,15 @@
 @model IEnumerable<CW_SITAIRIS.Models.Car>
 
 @{
-    ViewData["Title"] = "Car Catalog";
+    ViewData["Title"] = "Каталог авто";
 }
 
-<h2>Catalog</h2>
+<h2>Каталог</h2>
 
 @if (AccountController.status >= 1)
 {
     <p>
-        <a asp-action="Create">Create New</a>
+        <a asp-action="Create">Добавить...</a>
     </p>
 }
 
@@ -18,21 +18,21 @@
 <div class="form-inline" >
     <form asp-controller="Cars" asp-action="Index" method="get">
         <span>
-            <label class="control-label">Mark</label>
-            <input class="form-control" type="text" name="mark" placeholder="Mark..." />
+            <label class="control-label">Марка</label>
+            <input class="form-control" type="text" name="mark" placeholder="Марка..." />
         </span>
         <span>
-            <label class="control-label">Model</label>
-            <input class="form-control" type="text" name="model" placeholder="Model..." />
+            <label class="control-label">Модель</label>
+            <input class="form-control" type="text" name="model" placeholder="Модель..." />
         </span>
 
         <span>
-            <label class="control-label">Built</label>
-            <input class="form-control" type="text" name="built" placeholder="Built..." />
+            <label class="control-label">Комплектация</label>
+            <input class="form-control" type="text" name="built" placeholder="Комплектация..." />
         </span>
         <div>
             <br />
-            <input class="btn btn-primary" type="submit" name="name" value="Filter" />
+            <input class="btn btn-primary" type="submit" name="name" value="Поиск" />
         </div>
     </form>
 
@@ -45,29 +45,36 @@
     <thead>
         <tr>
             <th>@*Image label*@</th>
+            @if (AccountController.status == 2)
+            {
+                <th>
+                    ID
+                </th>
+
+            }
             <th>
-                @Html.DisplayNameFor(model => model.country)
+                Страна
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.color)
+                Цвет
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.mark)
+                Марка
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.model)
+                Модель
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.engine)
+                Двигатель
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.price)
+                Цена
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.built)
+                Комплектация
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.warehouseId)
+                Склад
             </th>
             <th></th>
         </tr>
@@ -78,6 +85,15 @@
 
 
             <tr>
+
+                @if (AccountController.status == 2)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idCar)
+                    </td>
+
+                }
+
                 <td>
                     <img src="~/images/@item.picture" alt="@item.mark" width="250" height="auto" />
                 </td>
@@ -108,15 +124,15 @@
                 <td>
                     @if (AccountController.status >= 1)
                     {
-                        <a class="form-control" asp-action="Edit" asp-route-id="@item.idCar">Edit</a>
-                        <a class="form-control" asp-action="Delete" asp-route-id="@item.idCar">Delete</a>
+                        <a class="form-control" asp-action="Edit" asp-route-id="@item.idCar">Изменить</a>
+                        <a class="form-control" asp-action="Delete" asp-route-id="@item.idCar">Удалить</a>
                     }
                     @if (AccountController.status == 0)
                     {
-                        <a class="form-control" asp-controller="TestDrives" asp-action="Create" asp-route-userId="@AccountController.UserId" asp-route-carId="@item.idCar">Test Drive</a>
-                        <a class="form-control" asp-controller="Orders" asp-action="Create" asp-route-carId="@item.idCar" asp-route-userId="@AccountController.UserId" >Order</a>
+                        <a class="form-control" asp-controller="TestDrives" asp-action="Create" asp-route-userId="@AccountController.UserId" asp-route-carId="@item.idCar">Тест-драйв</a>
+                        <a class="form-control" asp-controller="Orders" asp-action="Create" asp-route-carId="@item.idCar" asp-route-userId="@AccountController.UserId">Заказать</a>
                     }
-                    <a asp-action="Details" asp-route-id="@item.idCar">Details</a>
+                    <a asp-action="Details" asp-route-id="@item.idCar">Подробно</a>
                 </td>
             </tr>
         }

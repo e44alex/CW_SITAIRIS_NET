@@ -1,54 +1,54 @@
 ﻿@model CW_SITAIRIS.Models.Car
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Создание";
 }
 
-<h2>Create</h2>
+    <h2>Создание</h2>
 
-<h4>Car</h4>
+<h4>автомобиля</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="country" class="control-label"></label>
+                <label class="control-label">Страна</label>
                 <input asp-for="country" class="form-control" />
                 <span asp-validation-for="country" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="color" class="control-label"></label>
+                <label  class="control-label">Цвет</label>
                 <input asp-for="color" class="form-control" />
                 <span asp-validation-for="color" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="mark" class="control-label"></label>
+                <label  class="control-label">Марка</label>
                 <input asp-for="mark" class="form-control" />
                 <span asp-validation-for="mark" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="model" class="control-label"></label>
+                <label  class="control-label">Модель</label>
                 <input asp-for="model" class="form-control" />
                 <span asp-validation-for="model" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="engine" class="control-label"></label>
+                <label class="control-label">Двигатель</label>
                 <input asp-for="engine" class="form-control" />
                 <span asp-validation-for="engine" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="price" class="control-label"></label>
+                <label class="control-label">Цена</label>
                 <input asp-for="price" class="form-control" />
                 <span asp-validation-for="price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="built" class="control-label"></label>
+                <label class="control-label">Комплектация</label>
                 <input asp-for="built" class="form-control" />
                 <span asp-validation-for="built" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="warehouseId" class="control-label"></label>
+                <label class="control-label">Склад</label>
                 <input asp-for="warehouseId" class="form-control" />
                 <span asp-validation-for="warehouseId" class="text-danger"></span>
             </div>
@@ -56,14 +56,14 @@
                 <input type="file" asp-for="picture" class ="form-control" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Создать" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Назад к списку</a>
 </div>
 
 @section Scripts {

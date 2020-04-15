@@ -2,58 +2,67 @@
 @model CW_SITAIRIS.Models.User
 
 @{
-    ViewData["Title"] = "Personal page";
+    ViewData["Title"] = "Личный кабинет";
 }
 
 <a asp-controller="Account" asp-action="Logout" style="margin-left: 1000px">Log out</a>
 
-<h2>Details</h2>
+@if (AccountController.status == 0)
+{
+    <h2>Личный Кабинет</h2>
+    <a asp-controller="Orders" asp-action="Index" asp-route-userId="@AccountController.UserId" class="btn btn-outline-primary">Мои заказы</a>
+}
+else
+{
+    <h2>Информация о пользователя</h2>
+    <a asp-controller="Orders" asp-action="Index" asp-route-userId="@Model.idUser" class="btn btn-outline-primary">Заказы пользователя</a>
+}
 
 
-<a asp-controller="Orders" asp-action="Index" asp-route-userId="@AccountController.UserId" class="btn btn-outline-primary" >My Orders</a>
+
 
 <div>
-    <h4>Personal page</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.role)
+            Уровень доступа
         </dt>
         <dd>
             @Html.DisplayFor(model => model.role)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.name)
+            ФИО
         </dt>
         <dd>
             @Html.DisplayFor(model => model.name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.login)
+            Login
         </dt>
         <dd>
             @Html.DisplayFor(model => model.login)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.password)
+            Пароль
         </dt>
         <dd>
             @Html.DisplayFor(model => model.password)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.birthdate)
+            Дата рождения
         </dt>
         <dd>
             @Html.DisplayFor(model => model.birthdate)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.proneNumber)
+            Телефон
         </dt>
         <dd>
             @Html.DisplayFor(model => model.proneNumber)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.email)
+            E-mail
         </dt>
         <dd>
             @Html.DisplayFor(model => model.email)
@@ -63,8 +72,8 @@
 <div>
     @if (AccountController.status == 2)
     {
-        <a asp-action="Edit" asp-route-id="@Model.idUser">Edit</a>
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Edit" asp-route-id="@Model.idUser">Изменить</a>
+        <a asp-action="Index">Назад</a>
     }
 
 </div>

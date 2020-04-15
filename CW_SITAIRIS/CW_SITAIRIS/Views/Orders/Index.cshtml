@@ -2,19 +2,19 @@
 @model IEnumerable<CW_SITAIRIS.Models.Order>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Список заказов";
 }
 
-<h2>Index</h2>
+<h2>Список заказов</h2>
 
 <div class="form-group">
     <form asp-action="Index" method="get">
         <div>
-            <label class="control-label">Date:</label>
+            <label class="control-label">Дата выдачи:</label>
             <input class="form-control" type="date" name="date" />
         </div>
         <div>
-            <input type="submit" value="Filter" class="btn btn-default" />
+            <input type="submit" value="Поиск" class="btn btn-default" />
         </div>
     </form>
 </div>
@@ -22,29 +22,27 @@
 @if (AccountController.status > 0)
 {
     <p>
-        <a asp-action="Create">Create New</a>
+        <a asp-action="Create">Добавить заказ</a>
     </p>
 }
-<div class="card-body">
 
-</div>
 <table class="table">
     <thead >
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.orderId)
+                Номер заказа
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.carId)
+                Номер авто
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.clientId)
+                Номер клиента
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dateOpened)
+                Заказ создан
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dateClosed)
+                Дата выдачи
             </th>
             <th></th>
         </tr>
@@ -70,10 +68,10 @@
             <td>
                 @if (AccountController.status > 0)
                 {
-                    <a asp-action="Edit" asp-route-id="@item.orderId">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.orderId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.orderId">Изменить</a>
+                    <a asp-action="Delete" asp-route-id="@item.orderId">Удалить</a>
                 }
-                <a asp-action="Details" asp-route-id="@item.orderId">Details</a>
+                <a asp-action="Details" asp-route-id="@item.orderId">Подробно</a>
             </td>
         </tr>
 }

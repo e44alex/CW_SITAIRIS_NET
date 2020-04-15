@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CW_SITAIRIS</title>
+    <title>@ViewData["Title"] - АВТОСАЛОН</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -31,36 +31,34 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CAR SHOWROOM</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">АВТО САЛОН</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Cars" asp-action="Index">Car Catalog</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Домой</a></li>
+                    <li><a asp-area="" asp-controller="Cars" asp-action="Index">Каталог</a></li>
                     @if (AccountController.status == -1)
                     {
-                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Log In</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Вход</a></li>
                     }
                     else
                     {
                         if (AccountController.status == 0) // client
                         {
-                            <li><a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@AccountController.UserId">User Page</a></li>
+                            <li><a asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@AccountController.UserId">Личный кабинет</a></li>
                         }
                         if (AccountController.status == 2) // manager
                         {
-                            <li><a asp-area="" asp-controller="Orders" asp-action="Index">Orders</a></li>
-                            <li><a asp-area="" asp-controller="TestDrives" asp-action="Index" asp-route-date="@DateTime.Today">Test Drives</a></li>
+                            <li><a asp-area="" asp-controller="Orders" asp-action="Index">Заказы</a></li>
+                            <li><a asp-area="" asp-controller="TestDrives" asp-action="Index" asp-route-date="@DateTime.Today">Тест-драйвы</a></li>
                         }
                         if (AccountController.status == 1) // admin
                         {
 
-                            <li><a asp-area="" asp-controller="Users" asp-action="Index">All Users</a></li>
+                            <li><a asp-area="" asp-controller="Users" asp-action="Index">Пользователи</a></li>
                         }
                         <li>
-                            <a asp-controller="Account" asp-action="Logout">Log Out</a>
+                            <a asp-controller="Account" asp-action="Logout">Выход</a>
                         </li>
                     }
                 </ul>
@@ -74,12 +72,12 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2020 - CW_SITAIRIS</p>
+            <p>&copy; 2020 - АВТОСАЛОН</p>
             <p>
-                <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+                <a asp-area="" asp-controller="Home" asp-action="About">О нас</a>
             </p>
             <p>
-                <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                <a asp-area="" asp-controller="Home" asp-action="Contact">Контакты</a>
             </p>
         </footer>
     </div>
